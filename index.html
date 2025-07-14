@@ -6,57 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="image/12345.ico" />
     <title>DevWeb</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preload" href="font/SambaBold.ttf" as="font" type="font/ttf" crossorigin="anonymous"> 
-
+    <link href="./css/output.css" rel="stylesheet">
+    <!--link href="./css/style.css" rel="stylesheet"-->
     <!--<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> -->
 
-    
+<style>
+    @font-face {
+    font-family: 'SambaBold';
+    src: url(css/SambaBold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+</style>
 </head>
-<body>
-    <header class="header" >
+<body class="bg-blue-200">
+    <header class="text-4xl font-bold text-center " style="background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'SambaBold', Arial, sans-serif;">
         <h1>Hello, DevWeb!</h1>
     </header>
-    <nav class="nav">
-        <ul>
+    <nav class="bg-blue-300 ">
+        <ul class="flex space-x-4 justify-around" style="font-family: 'SambaBold', Arial, sans-serif; font-size: 17px; color: white;">
             <li><a href="/">Home</a></li>
             <li><a href="/about.html">About</a></li>
-            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="https://youtu.be/uNmrEmIvr6c?list=RDuNmrEmIvr6c" target="_blank">Contact</a></li>
             <li><a href="https://www.youtube.com">Services</a></li>
         </ul>
     </nav>
-    <div class="main-content">
+    <div class="container mx-auto p-4 bg-white shadow-lg rounded-lg mt-4" style="font-family: 'SambaBold', Arial, sans-serif; font-size: 18px; color: black;">
+        <h1 style="color: red;">เว็บนี้ สร้างขึ้นเพี่อ การศึกษา เท่านั้น </h1>
         <p>This is a paragraph inside <strong>the main content area</strong>.</p>
         <h2>คณะวิทยาศาสตร์</h2>
         <p>สาขาวิชาวิทยาการคอมพิวเตอร์</p>
-        <img src="image/Screenshot 2025-03-24 003921.png" alt="เมาเมา เป็นแมวชนิดหนึ่งที่มีขนยาวและนุ่มนวล" width="300"/>
-        <h3>รายชื่อผู้เรียน</h3>
-        <table border="1">
-            <tr>
+        <div class="flex flex-wrap justify-center mt-4">
+            <img src="image/Screenshot 2025-03-24 003921.png" alt="เมาเมา เป็นแมวชนิดหนึ่งที่มีขนยาวและนุ่มนวล" width="400" class="mt-4" />
+            <img src="image/Screenshot 2025-07-13 135527.png" alt="วากุริ kawaii <3" width="400" class="mt-4"/>
+            <img src="image/Screenshot 2025-07-01 215846.png" alt="หวานเจี๊ยบบบ" width="400" class="mt-4"/>
+        </div>
+        <br>
+        <h3 class="text-center">รายชื่อผู้เรียน</h3>
+        <table border="1" class="w-full text-center">
+            <tr class="bg-blue-300 text-violet-400">
                 <th>รหัสนักศึกษา</th>
                 <th>ชื่อ-นามสกุล</th>
                 <th>สาขา</th>
-            </tr>
-            <tbody>
-            <tr>
-                <td>123456</td>
-                <td>นายสมชาย ใจดี</td>
-                <td>วิทยาการคอมพิวเตอร์</td>
-            </tr>
-            <tr>
-                <td>654321</td>
-                <td>นางสาวสมหญิง ใจเย็น</td>
-                <td>วิทยาการคอมพิวเตอร์</td>
-            </tr>
+                <tbody>
+                    <tr class="bg-gray-300">
+                        <td>123456</td>
+                        <td>นายสมชาย ใจดี</td>
+                        <td>วิทยาการคอมพิวเตอร์</td>
+                    </tr>
+                    <tr class="bg-gray-300">
+                        <td>654321</td>
+                        <td>นางสาวสมหญิง ใจเย็น</td>
+                        <td>วิทยาการคอมพิวเตอร์</td>
+                    </tr>
             </tbody>
+            </tr>
         </table>
     </div>
     <br></br>
-    <footer class="footer">
+    <footer class="bg-blue-300 text-center p-4 mt-4" style="font-family: 'SambaBold', Arial, sans-serif; font-size: 16px; color: white;">
         <p>© 2042 DevWeb. All rights reserved.</p>
     </footer>
 </body>
-
+#ป้องกันการคลิกขวา
+<script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'U')) {
+            e.preventDefault();
+        }
+    });
+    document.addEventListener('copy', function(e) {
+        e.preventDefault();
+        alert('การคัดลอกเนื้อหาไม่อนุญาต');
+    });
+    document.addEventListener('paste', function(e) {
+        e.preventDefault();
+        alert('การวางเนื้อหาไม่อนุญาต');
+    });
+    document.addEventListener('cut', function(e) {
+        e.preventDefault();
+        alert('การตัดเนื้อหาไม่อนุญาต');
+    });
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+        alert('การเลือกเนื้อหาไม่อนุญาต');
+    });
+    document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        alert('การลากและวางเนื้อหาไม่อนุญาต');
+    });
+    document.addEventListener('drop', function(e) {
+        e.preventDefault();
+        alert('การวางเนื้อหาไม่อนุญาต');
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'U')) {
+            e.preventDefault();
+            alert('การเข้าถึงเครื่องมือพัฒนาไม่อนุญาต');
+        }
+    });
+</script>
 </html>
